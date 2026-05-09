@@ -69,13 +69,16 @@ fun EduTrustTheme(
 
     CompositionLocalProvider(
         LocalAppTheme provides currentTheme,
-        LocalThemeSwitcher provides { 
+        LocalThemeSwitcher provides {
             currentTheme = it
             onThemeChange(it)
-        }
+        },
+        LocalSpacing provides Spacing()
     ) {
         MaterialTheme(
             colorScheme = colorScheme,
+            typography = VidyaTypography,
+            shapes = VidyaShapes,
             content = content
         )
     }
